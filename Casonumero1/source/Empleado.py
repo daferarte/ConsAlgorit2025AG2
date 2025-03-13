@@ -91,3 +91,43 @@ class Empleado:
     def DarDiaNacimiento(self):
         #Aqui va mi codigo
         return self.fechaNacimiento.DarDia()
+    
+    __method__ = "CambiarFechaIngreso"
+    __params__ = "dia, mes, anio"
+    __returns__ = "Nada"
+    __descriptions__ = "Metodo que sirve para cambiar la fecha de ingreso a la empresa"
+    def CambiarFechaIngreso(self, dia, mes, anio):
+        self.fechaIngreso.CambiarDia(dia)
+        self.fechaIngreso.CambiarMes(mes)
+        self.fechaIngreso.CambiarAnio(anio)
+        
+    __method__ = "CambiarFechaNacimiento"
+    __params__ = "dia, mes, anio"
+    __returns__ = "Nada"
+    __descriptions__ = "Metodo que sirve para cambiar la fecha de Nacimiento del empleado"
+    def CambiarFechaNacimiento(self, dia, mes, anio):
+        self.fechaNacimiento.CambiarDia(dia)
+        self.fechaNacimiento.CambiarMes(mes)
+        self.fechaNacimiento.CambiarAnio(anio)
+        
+    __method__ = "DarFechaIngreso"
+    __params__ = "Ninguno"
+    __returns__ = "fechaIngreso"
+    __descriptions__ = "Metodo que sirve para mostrar la fecha de ingreso a la empresa"
+    def DarFechaIngreso(self):
+        # Aqui va el codigo
+        # forma 1
+        # fechaIngreso = f'{self.fechaIngreso.DarDia()}/{self.fechaIngreso.DarMes()}/{self.fechaIngreso.DarAnio()}'
+        # return fechaIngreso
+        #forma 2
+        # return f'{self.fechaIngreso.DarDia()}/{self.fechaIngreso.DarMes()}/{self.fechaIngreso.DarAnio()}'
+        # Forma 3
+        return self.fechaIngreso.DarFecha()
+    
+    __method__ = "DarFechaNacimiento"
+    __params__ = "Ninguno"
+    __returns__ = "fechaNacimiento"
+    __descriptions__ = "Metodo que sirve para mostrar la fecha de nacimiento"
+    def DarFechaNacimiento(self):
+        # Aqui va el codigo
+        return self.fechaNacimiento.DarFecha()
