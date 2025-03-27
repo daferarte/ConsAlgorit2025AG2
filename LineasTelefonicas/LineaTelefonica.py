@@ -4,7 +4,7 @@ class LineaTelefonica:
     ----------------------------------------------------------------'''
     
     # Numero de llamadas realizadas
-    numeroLlamadas=0
+    numeroLlamadas:int =0
     
     # Numero de minutos consumidos
     numeroMinutos=0
