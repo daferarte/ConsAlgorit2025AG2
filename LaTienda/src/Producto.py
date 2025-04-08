@@ -4,21 +4,20 @@ __version__ = "1.0.0"
 __email__ = "daniel.arteagafajar@campusucc.edu.co"
 
 from Tipo import Tipo
+import constantes
+
 class Producto:
-    
-    ##############################################
-    # constantes
-    #############################################
-    
-    __IVA_SUPERMERCADO:float=0.04
-    __IVA_PAPELERIA:float=0.16
-    __IVA_DROGUERIA:float=0.12
-    
-    def __init__(self, valorUnitario:float, calidad:str, tipo:Tipo):
+        
+    def __init__(self, nombre:str, tipo:Tipo, valorUnitario:float, cantidadBodega:int, cantidadMinima:int,calidad:str):
+       self.__nombre:str = nombre
+       self.__tipo:Tipo=tipo
        self.__valorUnitario:float = valorUnitario
+       self.__cantidadBodega:int = cantidadBodega
+       self.__cantidadMinima:int = cantidadMinima
        self.__subsidio:bool = False
        self.__calidad:str = calidad
-       self.__tipo:Tipo=tipo
+       self.__unidadesVendidas=0
+       
     
     __method__ = "DarValorUnitario"
     __params__ = "Ninguno"
@@ -72,4 +71,4 @@ class Producto:
         # return total
 
         # Forma2
-        return (self.__valorUnitario*self.__IVA_SUPERMERCADO)+self.__valorUnitario
+        return (self.__valorUnitario*constantes.IVA_SUPERMERCADO)+self.__valorUnitario
