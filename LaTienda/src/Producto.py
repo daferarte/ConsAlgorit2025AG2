@@ -9,14 +9,18 @@ import constantes
 class Producto:
         
     def __init__(self, nombre:str, tipo:Tipo, valorUnitario:float, cantidadBodega:int, cantidadMinima:int,calidad:str):
-       self.__nombre:str = nombre
-       self.__tipo:Tipo=tipo
-       self.__valorUnitario:float = valorUnitario
-       self.__cantidadBodega:int = cantidadBodega
-       self.__cantidadMinima:int = cantidadMinima
-       self.__subsidio:bool = False
-       self.__calidad:str = calidad
-       self.__unidadesVendidas=0
+        assert nombre, "El nombre no puede ser vacio"    
+        assert tipo in Tipo, "El tipo no es compatible"
+        assert valorUnitario > 0, "El valor unitario debe ser mayor a cero"
+        
+        self.__nombre:str = nombre
+        self.__tipo:Tipo=tipo
+        self.__valorUnitario:float = valorUnitario
+        self.__cantidadBodega:int = cantidadBodega
+        self.__cantidadMinima:int = cantidadMinima
+        self.__subsidio:bool = False
+        self.__calidad:str = calidad
+        self.__unidadesVendidas=0
        
     
     __method__ = "DarValorUnitario"
